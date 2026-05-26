@@ -4,6 +4,11 @@ A commons of verified, content-addressed AXIS functions, generic templates, and
 modules. Anyone can use what's here. Contributors put work into the commons
 because shared verified components benefit everyone.
 
+AXIS-Library belongs to the AXIS Core ecosystem: the AI-first JSON AST language,
+verification pipeline, and content-addressed registry/toolchain. It is not
+affiliated with `AGDNoob/axis-lang`, which is a separate Python-like systems
+language/native compiler project.
+
 The library is a Git repository first. GitHub provides review, history, pull
 requests, issue tracking, and release snapshots. AXIS provides the trust model
 through content hashes, publisher signatures, signed revocation feeds, and
@@ -73,6 +78,7 @@ registry/
   objects/
     fn/               — concrete verified functions
     gfn/              — generic function templates
+    gtype/            — generic type templates
     mod/              — verified modules
 
 trust/
@@ -91,6 +97,7 @@ scripts/              — verification and tooling
 
 - `fn:<hash>` entries are concrete verified functions.
 - `gfn:<hash>` entries are generic function templates.
+- `gtype:<hash>` entries are generic type templates.
 - `mod:<hash>` entries are verified modules.
 - IDs are content-addressed. Changing code means publishing a new ID — old
   IDs are never silently mutated.
