@@ -1,0 +1,157 @@
+{
+  "axis_version": "0.1",
+  "definitions": [
+    {
+      "body": {
+        "cond": {
+          "args": [
+            {
+              "kind": "ref",
+              "to": "n"
+            },
+            {
+              "kind": "literal",
+              "type": {
+                "kind": "int",
+                "signed": true,
+                "width": 64
+              },
+              "value": 1
+            }
+          ],
+          "fn": "fn:op_le_i64",
+          "kind": "call"
+        },
+        "else": {
+          "args": [
+            {
+              "kind": "ref",
+              "to": "n"
+            },
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "kind": "ref",
+                      "to": "n"
+                    },
+                    {
+                      "kind": "literal",
+                      "type": {
+                        "kind": "int",
+                        "signed": true,
+                        "width": 64
+                      },
+                      "value": 1
+                    }
+                  ],
+                  "fn": "fn:op_sub_i64",
+                  "kind": "call"
+                }
+              ],
+              "fn": "fn:9492475d580480addc55905a6d974645",
+              "kind": "call"
+            }
+          ],
+          "fn": "fn:op_mul_i64",
+          "kind": "call"
+        },
+        "kind": "if",
+        "then": {
+          "kind": "literal",
+          "type": {
+            "kind": "int",
+            "signed": true,
+            "width": 64
+          },
+          "value": 1
+        }
+      },
+      "effects": [],
+      "id": "fn:9492475d580480addc55905a6d974645",
+      "kind": "function",
+      "name": "factorial",
+      "params": [
+        {
+          "name": "n",
+          "type": {
+            "kind": "int",
+            "signed": true,
+            "width": 64
+          }
+        }
+      ],
+      "postconditions": [
+        {
+          "args": [
+            {
+              "kind": "ref",
+              "to": "result"
+            },
+            {
+              "kind": "literal",
+              "type": {
+                "kind": "int",
+                "signed": true,
+                "width": 64
+              },
+              "value": 1
+            }
+          ],
+          "fn": "fn:op_ge_i64",
+          "kind": "call"
+        }
+      ],
+      "preconditions": [
+        {
+          "args": [
+            {
+              "kind": "literal",
+              "type": {
+                "kind": "int",
+                "signed": true,
+                "width": 64
+              },
+              "value": 0
+            },
+            {
+              "kind": "ref",
+              "to": "n"
+            }
+          ],
+          "fn": "fn:op_le_i64",
+          "kind": "call"
+        }
+      ],
+      "returns": {
+        "kind": "int",
+        "signed": true,
+        "width": 64
+      },
+      "termination": {
+        "kind": "ref",
+        "to": "n"
+      }
+    }
+  ],
+  "imports": [
+    {
+      "from": "std.int",
+      "id": "fn:op_le_i64"
+    },
+    {
+      "from": "std.int",
+      "id": "fn:op_mul_i64"
+    },
+    {
+      "from": "std.int",
+      "id": "fn:op_sub_i64"
+    }
+  ],
+  "module_id": "mod:5eeeedea7123c1c02cfed9650856e635",
+  "runtime": {
+    "compiler": "cpp",
+    "kind": "runtime"
+  }
+}

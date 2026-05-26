@@ -1,4 +1,200 @@
 {
   "axis_registry_version": "0.1",
-  "entries": []
+  "entries": [
+    {
+      "content": {
+        "bytes_sha256": "80c8477aef6428fb9b52c92f58d04450971402c2f1c8747a45bb3a27b26d9047",
+        "path": "objects/fn/9492475d580480addc55905a6d974645.json"
+      },
+      "hash_algorithm": "axis-function-v1/sha256",
+      "id": "fn:9492475d580480addc55905a6d974645",
+      "kind": "function",
+      "metadata": {
+        "contracts": "1 precondition(s), 1 postcondition(s), termination measure",
+        "effects": [],
+        "generic_provenance": {},
+        "intent": "",
+        "module_id": "mod:5eeeedea7123c1c02cfed9650856e635",
+        "params": [
+          {
+            "name": "n",
+            "type": "i64"
+          }
+        ],
+        "returns": "i64",
+        "signature": "factorial(n: i64) -> i64",
+        "source": "..\\axis\\examples\\factorial.ax",
+        "tags": [
+          "factorial",
+          "factorial",
+          "n",
+          "i64",
+          "i64"
+        ],
+        "type_args": []
+      },
+      "name": "factorial",
+      "quality": "property_tested",
+      "sha256": "9492475d580480addc55905a6d974645ac7a086000ecb7d70f270d5d227d3b5c",
+      "signatures": [
+        {
+          "publisher": "ewc1102",
+          "scheme": "rsa-sha256",
+          "signature": "FXI4UV3DZSezmEOrLLVqCt8FFUJgqGlLtdRvkwqLgNugzSuydDFCOklBgX9CHpvsM+wZYk8QhB3Md70YADN+20khecTuzdjSoht3LOWqjVUm+KX5asKbA1pcAnVJxEZQ/cuOeyAgPwCYRROWm4gnB1JJDbNgVsP2JgqnUI63J6Wr4yIJJnMnatr2/E0tRiwu5ppqdSv8Fpw/R/hbu1zRxdfdPPHcZboBwFVBi1R6kkLzzJs+bx63RwYkzehfUy5JQv3J/8oCA5TpM6h7b58KGV1HaHdFK2c86ps9zhsF9sns1PnSC9knt1xxAb4s0ITpbE/KChJFeDBuJ5QWMuqXJ/0MNUlG0BBeX9NbWEt/WwUPCNNFCKhUy4M5c59qTsQ49NyQh/qmolMDXdJnnLWn8r+EwDvMCVZGaRoKxXRQhjMlUohGNtEdCS+EWnTxh0r/B4ah5dlg/vA3jYsrMFj/XQqNhFNA2+DlNweYAW9C0+X+sWnSZXZYrNXvPCGGiCUY"
+        }
+      ],
+      "trust": {
+        "publishers": [
+          "ewc1102"
+        ],
+        "signed": true
+      },
+      "verification": {
+        "canonical": true,
+        "content_addressed": true,
+        "contracts": "declared",
+        "property_tests": "passed",
+        "property_tests_run": 25,
+        "static_effectcheck": "passed",
+        "static_typecheck": "passed"
+      }
+    },
+    {
+      "content": {
+        "bytes_sha256": "d938a25674a994d5440b636e75a9677299610c0680cc6d54db129f0096b0d9aa",
+        "path": "objects/fn/f3f21e55f891b36768e0622e28be1d57.json"
+      },
+      "hash_algorithm": "axis-function-v1/sha256",
+      "id": "fn:f3f21e55f891b36768e0622e28be1d57",
+      "kind": "function",
+      "metadata": {
+        "contracts": "2 precondition(s), termination measure",
+        "effects": [],
+        "generic_provenance": {},
+        "intent": "",
+        "module_id": "mod:9f0b1e6bccfda851aaeb41bc88daeb4e",
+        "params": [
+          {
+            "name": "a",
+            "type": "i64"
+          },
+          {
+            "name": "b",
+            "type": "i64"
+          }
+        ],
+        "returns": "i64",
+        "signature": "gcd(a: i64, b: i64) -> i64",
+        "source": "..\\axis\\examples\\gcd.ax",
+        "tags": [
+          "gcd",
+          "gcd",
+          "i64",
+          "b",
+          "i64",
+          "i64"
+        ],
+        "type_args": []
+      },
+      "name": "gcd",
+      "quality": "property_tested",
+      "sha256": "f3f21e55f891b36768e0622e28be1d579fda727baceab8914b2f97fabad5102d",
+      "signatures": [
+        {
+          "publisher": "ewc1102",
+          "scheme": "rsa-sha256",
+          "signature": "HEzUFgtUACyY4yBqV7oFQzPn7ia8IAPfpxUfzbi112OK+wOk3EoxNZmSwSNZrY4M7NZPNWM/t0wG1BYGm99E7mtA6yDV1h8Q6zfOU5wrB0tca8XqMtiBFEQvpw90pzGSyZ+r+BC9TVchkplknqg9RbvIyRTWpJLXnhpPF79Q1xHtoTfEjJGakGD9E2YeCEKmHcS4ikp3VSxlXQB6T8E1SODnEpGdzty68yjIda/zSEmJ8XImV9G6oh9ZXwZoIDY3ei8+wTAog0v6QNsGkmQ3VJ7EWloJ4lUIR4hKx2tWuug5aLpL6scO6AXzQ/2NieIqbpyHnC5opvbpG1PudTTqu8FvXGF1VkhxiqPxyTCVJBg+fHhL20TvIoXLW4i2wCiePSsfCGxWPOTJkPSqYl9M/DQEK+qrA6EAZ/t0k7DufnOsqgBwD9ugXkHH3nS8yRNRFTPqCAvvsZfbTWCBj+Wo5ZHHc3QdlsMuummWO5241cunjrfZG2qh5qR6NY6LFoHG"
+        }
+      ],
+      "trust": {
+        "publishers": [
+          "ewc1102"
+        ],
+        "signed": true
+      },
+      "verification": {
+        "canonical": true,
+        "content_addressed": true,
+        "contracts": "declared",
+        "property_tests": "passed",
+        "property_tests_run": 25,
+        "static_effectcheck": "passed",
+        "static_typecheck": "passed"
+      }
+    },
+    {
+      "content": {
+        "bytes_sha256": "bfb5f92d07450fdc1a955f9a35bb2218ca41da1f500bf2f02ef73a289851172a",
+        "path": "objects/mod/5eeeedea7123c1c02cfed9650856e635.ax"
+      },
+      "hash_algorithm": "axis-module-v1/sha256",
+      "id": "mod:5eeeedea7123c1c02cfed9650856e635",
+      "kind": "module",
+      "metadata": {
+        "definition_count": 1,
+        "intent": "",
+        "source": "..\\axis\\examples\\factorial.ax"
+      },
+      "name": "5eeeedea7123c1c02cfed9650856e635",
+      "quality": "property_tested",
+      "sha256": "5eeeedea7123c1c02cfed9650856e6359c2c8b608bfff3927ff3d78e7086864b",
+      "signatures": [
+        {
+          "publisher": "ewc1102",
+          "scheme": "rsa-sha256",
+          "signature": "l7UeBPnpQ27hh/2r/9idFtu2UcgOPvTcgy/yIE9kfs5cx46kH9PYFa9fjBgTe0MHDK/RvtCeb3rOG1RK44CvVGPB4D+cPbSz+Vvb1MDm9n7iaksZNL0uvsF8b9cnyijuvzyxSTS+sn0yOkmU8cNHkhWQRg8J1YoTh+zZ6l+Fg4bp/ak5igC+lhETphxcqo3Cqye3KvcEss0+B3cENNFj9LX/bmeW3qOjGE40JOYqKkts+oCG64gdqUDP8h8+XVjvJz0mFs2YCliXzPTOhhdYVYQ18S/60k85zKRxsk4oUZnJOSmYPYCNK6OW1bIq0UtOwkQtgEXAOcymWgXZ+Tzvw1i5+e6rhr7zKsNIh1cp/Es8t0EMgbhNIejkY286hFVQ2wxalPgcH4rHR3NAGcz0oCF298rcvLYizJa9pD6c18GAAPjzcIfmOGWCwe2ZvL5WAvGtfDvNeiUiZduvSTJWV0UjPJ6bCtAfHvOuxbo5krVZ7exinR9y95IyiIlHPhdN"
+        }
+      ],
+      "trust": {
+        "publishers": [
+          "ewc1102"
+        ],
+        "signed": true
+      },
+      "verification": {
+        "canonical": true,
+        "content_addressed": true,
+        "property_tests": "passed",
+        "static_effectcheck": "passed",
+        "static_typecheck": "passed"
+      }
+    },
+    {
+      "content": {
+        "bytes_sha256": "78080030b933cde8c3f8cf1907a0fe2a28b9d080382b36c11b34c28c76b3cd41",
+        "path": "objects/mod/9f0b1e6bccfda851aaeb41bc88daeb4e.ax"
+      },
+      "hash_algorithm": "axis-module-v1/sha256",
+      "id": "mod:9f0b1e6bccfda851aaeb41bc88daeb4e",
+      "kind": "module",
+      "metadata": {
+        "definition_count": 1,
+        "intent": "",
+        "source": "..\\axis\\examples\\gcd.ax"
+      },
+      "name": "9f0b1e6bccfda851aaeb41bc88daeb4e",
+      "quality": "property_tested",
+      "sha256": "9f0b1e6bccfda851aaeb41bc88daeb4ebeb1afb46bb857d5b649bd82772993a2",
+      "signatures": [
+        {
+          "publisher": "ewc1102",
+          "scheme": "rsa-sha256",
+          "signature": "nnyGlaCYxfJiFHBwXM3ux4Q4XnlvqBfzo1XzZ0QcrnJ5IWbLh+/5zizdXNaGDACkZewI7CoYwZUFGkRfll7MbpUlWRoj2Znu3eRX5sXnnq16g8V/zYLYXB+Ou1o3YTgwzS9OCsYiUd2+d3cRgG5+VkTdtNVwkVFsktxyTfU2mzM0nHo+vwJR6c0i+gEgiue/ddXudY0Fh588O9WQTRoTs407JcCGYhSA8+DpYvQQtYXBoiy4v1pxlbgYsc0I08yRIqk2IHTQvtulWWuKVZytj/yDujTXRLCp7XiBsXyPyjiNQOL7IHGWZsss2Xe8rQawNKSwjHBIF9S6T+PSpSUyTOTS3rVRsMId3Dsfv8s+qePGwxRJF/3iCAwAjZNNHtiPgx4UBT9lWTBB6ux7sXZMSPCwzn6eTj5k+p3Uu37eQPPmJ/ynzsEHEqsot9p5Yn+pws1ntNjH7cVwry0oOzRo5BBkpdQQebLXs/BCFH6dgreSN56v7A37PQePM/X4f3os"
+        }
+      ],
+      "trust": {
+        "publishers": [
+          "ewc1102"
+        ],
+        "signed": true
+      },
+      "verification": {
+        "canonical": true,
+        "content_addressed": true,
+        "property_tests": "passed",
+        "static_effectcheck": "passed",
+        "static_typecheck": "passed"
+      }
+    }
+  ]
 }

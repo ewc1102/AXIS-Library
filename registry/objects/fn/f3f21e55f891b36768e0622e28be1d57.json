@@ -1,0 +1,123 @@
+{
+  "body": {
+    "cond": {
+      "args": [
+        {
+          "kind": "ref",
+          "to": "b"
+        },
+        {
+          "kind": "literal",
+          "type": {
+            "kind": "int",
+            "signed": true,
+            "width": 64
+          },
+          "value": 0
+        }
+      ],
+      "fn": "fn:op_eq_i64",
+      "kind": "call"
+    },
+    "else": {
+      "args": [
+        {
+          "kind": "ref",
+          "to": "b"
+        },
+        {
+          "args": [
+            {
+              "kind": "ref",
+              "to": "a"
+            },
+            {
+              "kind": "ref",
+              "to": "b"
+            }
+          ],
+          "fn": "fn:mod_i64",
+          "kind": "call"
+        }
+      ],
+      "fn": "fn:f3f21e55f891b36768e0622e28be1d57",
+      "kind": "call"
+    },
+    "kind": "if",
+    "then": {
+      "kind": "ref",
+      "to": "a"
+    }
+  },
+  "effects": [],
+  "id": "fn:f3f21e55f891b36768e0622e28be1d57",
+  "kind": "function",
+  "name": "gcd",
+  "params": [
+    {
+      "name": "a",
+      "type": {
+        "kind": "int",
+        "signed": true,
+        "width": 64
+      }
+    },
+    {
+      "name": "b",
+      "type": {
+        "kind": "int",
+        "signed": true,
+        "width": 64
+      }
+    }
+  ],
+  "preconditions": [
+    {
+      "args": [
+        {
+          "kind": "ref",
+          "to": "a"
+        },
+        {
+          "kind": "literal",
+          "type": {
+            "kind": "int",
+            "signed": true,
+            "width": 64
+          },
+          "value": 0
+        }
+      ],
+      "fn": "fn:op_ge_i64",
+      "kind": "call"
+    },
+    {
+      "args": [
+        {
+          "kind": "ref",
+          "to": "b"
+        },
+        {
+          "kind": "literal",
+          "type": {
+            "kind": "int",
+            "signed": true,
+            "width": 64
+          },
+          "value": 0
+        }
+      ],
+      "fn": "fn:op_ge_i64",
+      "kind": "call"
+    }
+  ],
+  "returns": {
+    "kind": "int",
+    "signed": true,
+    "width": 64
+  },
+  "termination": {
+    "kind": "ref",
+    "to": "b"
+  }
+}

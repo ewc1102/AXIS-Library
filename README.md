@@ -131,6 +131,6 @@ python ../axis/axis_registry.py --registry registry export-bundle dist/axis-libr
 
 ## Status
 
-Bootstrapped. The repository is an audit-friendly skeleton of the commons.
-First real entries arrive through reviewed PRs as the AXIS toolchain matures
-and contributors begin publishing.
+Bootstrapped and seeded. The repository has its first trusted publisher and
+first signed, property-tested entries. Future entries should arrive through
+reviewed PRs as the AXIS toolchain matures and contributors begin publishing.
