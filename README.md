@@ -37,6 +37,18 @@ scripts/
 - Bad entries are revoked through signed revocation feeds, not silently edited.
 - Public registry mirrors should be read-only; submissions happen through PRs.
 
+## License And Contribution Terms
+
+AXIS-Library is licensed under Apache-2.0. Public read-only use is governed by
+`LICENSE`.
+
+Contributions require `CONTRIBUTING.md`, DCO signed-off commits, and pull request
+review. Trusted publishers must also complete
+`governance/PUBLISHER_AGREEMENT.md` and be added to `trust/trust.json`.
+
+AI agents may assist, but the human or organization operating the agent is the
+contributor of record. Agent-specific rules are in `AGENTS.md`.
+
 ## Local Verification
 
 From this repo, with `AXIS` checked out beside it:
@@ -65,9 +77,10 @@ python ..\axis\axis_registry.py --registry registry export-bundle dist\axis-libr
 
 1. Add or update AXIS modules under `submissions/pending/<publisher>/`.
 2. Include review evidence using `governance/ENTRY_REVIEW_CHECKLIST.md`.
-3. A maintainer verifies, signs, indexes, and mirrors accepted entries into
+3. Sign off every commit with `git commit -s`.
+4. A maintainer verifies, signs, indexes, and mirrors accepted entries into
    `registry/`.
-4. CI must pass before merge.
+5. CI must pass before merge.
 
 ## Status
 

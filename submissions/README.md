@@ -10,5 +10,8 @@ Submitters should include:
 - audit evidence when claiming `audited`,
 - publisher signature details when available.
 
+Every pull request must follow `../CONTRIBUTING.md`, include DCO signed-off
+commits, and disclose material AI assistance.
+
 Maintainers move accepted content into `registry/` by indexing and signing with
 the AXIS registry tools.

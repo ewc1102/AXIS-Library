@@ -1,0 +1,28 @@
+name: DCO
+
+on:
+  pull_request:
+
+jobs:
+  dco:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check commit sign-offs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          base="origin/${{ github.base_ref }}"
+          missing=0
+          for sha in $(git rev-list "${base}..HEAD"); do
+            if ! git log -1 --format=%B "$sha" | grep -Eqi '^Signed-off-by: .+ <.+@.+>$'; then
+              echo "::error title=Missing DCO sign-off::Commit $sha is missing a Signed-off-by line."
+              missing=1
+            fi
+          done
+          exit "$missing"

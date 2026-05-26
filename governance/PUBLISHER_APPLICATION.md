@@ -24,6 +24,7 @@
 ## Review Requirements
 
 - [ ] Publisher agrees to sign all public entries with RSA-SHA256.
+- [ ] Publisher agrees to `PUBLISHER_AGREEMENT.md`.
 - [ ] Publisher agrees to submit revocation feeds for known-bad entries.
 - [ ] Publisher agrees that content-addressed fixes publish new IDs.
 - [ ] Publisher agrees to retain evidence for `reviewed` and `audited` claims.
