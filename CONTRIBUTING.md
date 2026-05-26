@@ -101,5 +101,10 @@ the accepted publisher key and remain subject to revocation.
 - Keep pending submissions under `submissions/pending/<publisher>/`.
 - Use `governance/ENTRY_REVIEW_CHECKLIST.md` for entry review evidence.
 - Use `governance/REVOCATION_RUNBOOK.md` for revocation feeds.
+- Do not modify or delete published files under `registry/objects/`,
+  `governance/accepted/`, `trust/publishers/`, or `revocations/`.
+- Do not edit or remove existing entries in `registry/registry.json`; publish a
+  new content-addressed entry and use a revocation feed when old code must no
+  longer be trusted.
 - Do not commit private keys, bearer tokens, prompts containing secrets, or
   proprietary source material.

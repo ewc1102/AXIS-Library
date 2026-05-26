@@ -26,14 +26,30 @@ gets to contribute.
 - Generated concrete generic instantiations may inherit trust only through a
   signed `gfn:` template and a trusted monomorphizer version.
 
+## Destructive Changes
+
+- Published registry objects under `registry/objects/` are immutable. Fixes,
+  replacements, and superseded implementations must be published as new
+  content-addressed objects.
+- Accepted governance evidence, publisher records, and revocation feeds are
+  append-only. Corrections should be added as new dated records.
+- `registry/registry.json` may add entries, but existing entries must not be
+  removed or edited.
+- `trust/trust.json` may add trusted publishers and strengthen policy, but it
+  must not remove existing trusted publishers, disable required signatures, or
+  lower the minimum quality threshold.
+- Removal from consumer use happens through signed revocation feeds, not
+  through deleting published history.
+
 ## Review Flow
 
 1. Publisher opens a PR with submission material under `submissions/pending/`.
 2. CI verifies registry structure, submissions, trust policy, and revocations.
-3. CI verifies every commit has a DCO sign-off.
-4. Reviewer checks intent, effects, contracts, and evidence.
-5. Maintainer indexes accepted entries into `registry/`.
-6. Merge publishes the updated read-only library state.
+3. CI rejects destructive edits to published append-only state.
+4. CI verifies every commit has a DCO sign-off.
+5. Reviewer checks intent, effects, contracts, and evidence.
+6. Maintainer indexes accepted entries into `registry/`.
+7. Merge publishes the updated read-only library state.
 
 ## Revocation
 

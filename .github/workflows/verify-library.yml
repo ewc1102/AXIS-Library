@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: library
+          fetch-depth: 0
 
       - name: Check out AXIS tools
         uses: actions/checkout@v4
@@ -28,3 +29,8 @@ jobs:
 
       - name: Verify library registry
         run: python library/scripts/verify_registry.py --library library --axis axis
+
+      - name: Check append-only published state
+        if: github.event_name == 'pull_request'
+        working-directory: library
+        run: python scripts/check_append_only.py --base-ref origin/${{ github.base_ref }} --head-ref HEAD

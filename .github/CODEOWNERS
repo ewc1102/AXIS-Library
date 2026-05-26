@@ -1,0 +1,10 @@
+# AXIS-Library is append-mostly. Repository admins should require CODEOWNER
+# review before merging protected-path changes.
+* @ewc1102
+
+registry/** @ewc1102
+trust/** @ewc1102
+revocations/** @ewc1102
+governance/** @ewc1102
+.github/** @ewc1102
+scripts/** @ewc1102
