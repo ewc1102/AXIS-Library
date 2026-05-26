@@ -1,8 +1,9 @@
 # AXIS-Library Governance
 
-AXIS-Library is the public library for verified AXIS code. It uses
-marketplace-style review, but the trust model stays cryptographic and
-content-addressed.
+AXIS-Library is the public commons of verified AXIS code (see `COMMONS.md`).
+Submissions are reviewed before merge, but the trust model is cryptographic
+and content-addressed — review is about quality, not about gatekeeping who
+gets to contribute.
 
 ## Publisher Admission
 
@@ -11,7 +12,10 @@ content-addressed.
 - Publishers must provide a contact channel and agree to revocation handling.
 - Publishers must accept `PUBLISHER_AGREEMENT.md` before their signatures are
   trusted by the public library.
-- New publishers start with `static_checked` entries until reviewed.
+- New publishers start at `static_checked` until reviewed. This is a quality
+  signal for consumers, not a permission gate — `static_checked` entries are
+  fully usable and content-addressed; higher quality tiers (`property_tested`,
+  `reviewed`, `audited`) require evidence per the entry review checklist.
 
 ## Entry Requirements
 

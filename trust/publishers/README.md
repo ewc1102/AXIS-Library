@@ -11,3 +11,6 @@ Each publisher should have:
 - any scope limits or quality restrictions.
 
 The active machine-readable trust policy is `../trust.json`.
+
+Private signing keys must never be committed to this repository. Store them in a
+secret manager or a private directory outside the checkout.

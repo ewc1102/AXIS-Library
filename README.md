@@ -1,88 +1,136 @@
 # AXIS-Library
 
-AXIS-Library is the public library and marketplace-style registry for verified,
-content-addressed AXIS functions, generic function templates, and modules.
+A commons of verified, content-addressed AXIS functions, generic templates, and
+modules. Anyone can use what's here. Contributors put work into the commons
+because shared verified components benefit everyone.
 
-The library is intentionally a Git repository first. GitHub provides review,
-history, pull requests, issue tracking, and release snapshots; AXIS still
-provides the trust model through content hashes, publisher signatures, signed
-revocation feeds, and transparency-log verification.
+The library is a Git repository first. GitHub provides review, history, pull
+requests, issue tracking, and release snapshots. AXIS provides the trust model
+through content hashes, publisher signatures, signed revocation feeds, and
+transparency-log verification.
+
+See [`COMMONS.md`](COMMONS.md) for the philosophy. See [`LICENSE`](LICENSE) for
+the legal terms (Apache-2.0).
+
+## For consumers
+
+Public, no agreement required. Just use it.
+
+```sh
+# Clone the library
+git clone https://github.com/ewc1102/AXIS-Library
+cd AXIS-Library
+
+# Import the latest verified bundle into your local AXIS registry
+python ../axis/axis_registry.py --registry .axis_registry import-bundle dist/axis-library-bundle.json
+
+# Search semantically for what you need
+python ../axis/axis_registry.py --registry .axis_registry search "verified factorial"
+
+# Pull a specific entry by hash
+python ../axis/axis_registry.py --registry .axis_registry materialize fn:<hash> build/reused.ax
+
+# Or pin it as a dependency via axpm
+python ../axis/axpm.py add-registry verified_math .axis_registry fn:<hash>
+```
+
+Every imported entry's hash recomputes locally and its publisher signature
+verifies before use. No trust required in the registry server — the math does
+the work.
+
+## For contributors
+
+Adding to the commons takes a pull request and a DCO sign-off. Read
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for the full path; the short version:
+
+1. Add `.ax` modules under `submissions/pending/<publisher>/` with a
+   `provenance.json` and review evidence per
+   [`governance/ENTRY_REVIEW_CHECKLIST.md`](governance/ENTRY_REVIEW_CHECKLIST.md).
+2. Sign off every commit:
+   ```sh
+   git commit -s
+   ```
+3. Open a PR. CI runs the full pipeline (DCO, schema, typecheck, effects,
+   contracts, property tests, registry verification).
+4. A maintainer reviews, signs accepted entries, and merges them into
+   `registry/`.
+
+AI agents may assist, but the human or organization operating the agent is the
+contributor of record. See [`AGENTS.md`](AGENTS.md).
 
 ## Layout
 
 ```text
+COMMONS.md            — why this exists
+LICENSE               — Apache-2.0
+CODE_OF_CONDUCT.md    — expected behavior
+CONTRIBUTING.md       — how to contribute
+AGENTS.md             — rules for AI-assisted contributions
+SUBMISSION_PROTOCOL.md — end-to-end submission flow
+
 registry/
-  registry.json
+  registry.json       — index of all published entries
   objects/
-    fn/
-    gfn/
-    mod/
+    fn/               — concrete verified functions
+    gfn/              — generic function templates
+    mod/              — verified modules
+
 trust/
-  trust.json
-  trust.example.json
-  publishers/
-revocations/
-governance/
-submissions/
-  pending/
-scripts/
+  trust.json          — active trust policy (publishers, signatures, feeds)
+  trust.example.json  — example showing the full shape
+  publishers/         — accepted publisher records
+
+revocations/          — signed revocation feeds
+governance/           — review checklists, runbooks, agreements
+submissions/pending/  — submissions awaiting review
+scripts/              — verification and tooling
+.github/              — CI workflows, PR template, issue templates
 ```
 
-## Registry Principles
+## Registry principles
 
 - `fn:<hash>` entries are concrete verified functions.
 - `gfn:<hash>` entries are generic function templates.
 - `mod:<hash>` entries are verified modules.
-- IDs are content-addressed. Changing code means publishing a new ID.
-- Bad entries are revoked through signed revocation feeds, not silently edited.
-- Public registry mirrors should be read-only; submissions happen through PRs.
+- IDs are content-addressed. Changing code means publishing a new ID — old
+  IDs are never silently mutated.
+- Bad entries are handled through signed revocation feeds, not deletes.
+- Public mirrors are read-only; new entries arrive through reviewed PRs.
 
-## License And Contribution Terms
+## Local verification
 
-AXIS-Library is licensed under Apache-2.0. Public read-only use is governed by
-`LICENSE`.
+Run the full verification suite from this repo (requires the AXIS toolchain
+checked out as a sibling directory):
 
-Contributions require `CONTRIBUTING.md`, DCO signed-off commits, and pull request
-review. Trusted publishers must also complete
-`governance/PUBLISHER_AGREEMENT.md` and be added to `trust/trust.json`.
-
-AI agents may assist, but the human or organization operating the agent is the
-contributor of record. Agent-specific rules are in `AGENTS.md`.
-
-## Local Verification
-
-From this repo, with `AXIS` checked out beside it:
-
+PowerShell:
 ```powershell
 python scripts/verify_registry.py --axis ..\axis
 ```
 
-This verifies the registry structure, object hashes, transparency log, trust
-policy JSON, and any pending `.ax` submissions.
-
-## Import Into A Local AXIS Registry
-
-```powershell
-cd ..\axis
-python axis_registry.py --registry .axis_registry import-bundle ..\AXIS-Library\dist\axis-library-bundle.json
+bash/sh:
+```sh
+python scripts/verify_registry.py --axis ../axis
 ```
 
-For now, bundles are generated by CI or manually with:
+This checks the registry structure, recomputes every object hash, verifies the
+transparency log, parses the trust policy, and validates pending submissions.
 
+## Bundle export
+
+Bundles are normally generated by CI. To produce one manually:
+
+PowerShell:
 ```powershell
 python ..\axis\axis_registry.py --registry registry export-bundle dist\axis-library-bundle.json
 ```
 
-## Submission Flow
-
-1. Add or update AXIS modules under `submissions/pending/<publisher>/`.
-2. Include review evidence using `governance/ENTRY_REVIEW_CHECKLIST.md`.
-3. Sign off every commit with `git commit -s`.
-4. A maintainer verifies, signs, indexes, and mirrors accepted entries into
-   `registry/`.
-5. CI must pass before merge.
+bash/sh:
+```sh
+python ../axis/axis_registry.py --registry registry export-bundle dist/axis-library-bundle.json
+```
 
 ## Status
 
-This repository is currently bootstrapped as an empty, audit-friendly public
-registry skeleton. The first real entries should be added through reviewed PRs.
+Bootstrapped. The repository is an audit-friendly skeleton of the commons.
+First real entries arrive through reviewed PRs as the AXIS toolchain matures
+and contributors begin publishing.

@@ -1,0 +1,16 @@
+{
+  "accepted_at": "2026-05-26",
+  "contact": "https://github.com/ewc1102",
+  "fingerprint_sha256": "62e40a26e4e51ab1827703366ff2efef8b8664cc4f7e2e878aa38e8bdf949247",
+  "name": "ewc1102",
+  "notes": "Initial trusted publisher for bootstrapping signed AXIS-Library entries.",
+  "public_key": {
+    "e": "010001",
+    "n": "be597d1662723b8ed9db98a631c6f3fefa01000c7df8d49cd9dfdb94bdb59cfb987c0111d124fb5eb9c9991a682df8fdcd9fad6aafa06759d69eb8f179c45062b4442a3aed32c5ef3dfcd65979b277ea1ee5f19323236eaa8b47bbdcf41586dfbf1ef91862bc3ee34c42c762fe2880384a8a1b7ff769fc36710996d43b1fd5bcc561136fe914ee6a1a225b83937d023076de7c6e29a0ac28d932e2969120ed623c6617f6a4242a99e55c87fbcbd02f1f438a5f5038f0a6d9dbd160728823f94625e9216632f88a3dbc2285259afdfcbb27ad8d6f6c2535a957949143ec4b650d430101c061e46827f5b0f7c5da3903dbdcbc56a66bd8d8ace533ef5f130593d7559a3edad1623cae3f241ce627d4b16ae23c4c18075a02e9d9f86e0afb449745a2ec9a9e37adc08070513c5da40715c23f57df85cf85fa1bfa484d9f10f102996be547b7b2cbe363f936f8e9d0133a0ea4a1c11468fe81bd129d5849753090fd7022cf4b9fbf09b6fabaf39728d510c0353843d9a25fb128e9d3e806bbc18df9"
+  },
+  "publisher_id": "ewc1102",
+  "repository": "https://github.com/ewc1102/AXIS-Library",
+  "role": "AXIS maintainer and initial AXIS-Library publisher",
+  "scheme": "rsa-sha256",
+  "status": "trusted"
+}

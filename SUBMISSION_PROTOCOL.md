@@ -41,4 +41,5 @@ does not revoke the public Apache-2.0 license for read-only consumption.
 
 Maintainers may reject submissions for unclear rights, missing sign-off,
 license incompatibility, missing provenance, failed verification, weak evidence,
-security concerns, or marketplace policy concerns.
+security concerns, or commons policy concerns (see `CODE_OF_CONDUCT.md` and
+`governance/LIBRARY_GOVERNANCE.md`).

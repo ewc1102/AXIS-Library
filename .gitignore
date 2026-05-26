@@ -2,5 +2,7 @@ dist/
 backups/
 *.tmp
 *.log
+*.private.json
+.secrets/
 __pycache__/
 .pytest_cache/
