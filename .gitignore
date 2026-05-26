@@ -1,0 +1,6 @@
+dist/
+backups/
+*.tmp
+*.log
+__pycache__/
+.pytest_cache/

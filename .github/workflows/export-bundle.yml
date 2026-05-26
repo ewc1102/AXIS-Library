@@ -1,0 +1,43 @@
+name: Export Registry Bundle
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "registry/**"
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out AXIS-Library
+        uses: actions/checkout@v4
+        with:
+          path: library
+
+      - name: Check out AXIS tools
+        uses: actions/checkout@v4
+        with:
+          repository: ewc1102/AXIS
+          path: axis
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify library
+        run: python library/scripts/verify_registry.py --library library --axis axis
+
+      - name: Export bundle
+        run: |
+          mkdir -p library/dist
+          python axis/axis_registry.py --registry library/registry export-bundle library/dist/axis-library-bundle.json
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: axis-library-bundle
+          path: library/dist/axis-library-bundle.json

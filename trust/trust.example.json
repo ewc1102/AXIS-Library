@@ -1,0 +1,19 @@
+{
+  "min_quality": "static_checked",
+  "require_signature": true,
+  "trusted_publishers": {
+    "axis-foundation": {
+      "scheme": "rsa-sha256",
+      "public_key": {
+        "n": "<hex-modulus>",
+        "e": "010001"
+      }
+    }
+  },
+  "trusted_monomorphizers": [
+    "axis-mono-v1"
+  ],
+  "revocation_feeds": [
+    "revocations/feed-latest.json"
+  ]
+}

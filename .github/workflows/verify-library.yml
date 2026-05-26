@@ -1,0 +1,30 @@
+name: Verify AXIS-Library
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out AXIS-Library
+        uses: actions/checkout@v4
+        with:
+          path: library
+
+      - name: Check out AXIS tools
+        uses: actions/checkout@v4
+        with:
+          repository: ewc1102/AXIS
+          path: axis
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify library registry
+        run: python library/scripts/verify_registry.py --library library --axis axis
